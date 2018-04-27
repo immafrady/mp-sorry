@@ -6,17 +6,24 @@
     ],
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
+        "navigationBarBackgroundColor": "#0099BC",
         "navigationBarTitleText": "制作Sorry Gif图",
         "navigationBarTextStyle": "black"
     },
     "tabBar" : {
+        "backgroundColor":"#fff",
+        "color" : "#d0d0d0",
+        "selectedColor" : "#0099BC",
         "list": [{
             "pagePath":"pages/index/index",
-            "text":"首页"
+            "text":"来写点啥",
+            "iconPath": "./res/icons/home.png",
+            "selectedIconPath": "./res/icons/home_selected.png"
         },{
-            "pagePath":"pages/output/output",
-            "text":"历史记录"
+            "pagePath":"pages/logs/logs",
+            "text":"历史记录",
+            "iconPath": "./res/icons/log.png",
+            "selectedIconPath": "./res/icons/log_selected.png"
         }]
     }
 }

@@ -1,13 +1,23 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class='container'>
+    <picker bindchange='bindTplType' value='{{ index }}' range="{{ rangeTplType }}" range-key="name">
+        <view class='common-picker_box'>
+            <text class='common-picker_title'>当前选择模板:</text>
+            <text class='common-picker_value'>{{ rangeTplType[index].name }}</text>
+        </view>
+    </picker>
+    <image src='{{ rangeTplType[index].src }}' mode="aspectFit" class='common-img'></image>
+    <view class='common-hr'></view>
+    <form bindsubmit='submitTpl' bindreset='resetTpl'>
+        <block wx:for="{{baseTpl}}" wx:key="id">
+            <view class='common-input_item'>
+                <view class='common-input_label'>{{item.title}}</view>
+                <input class='common-input_input' placeholder='{{item.default}}' name="{{item.id}}"></input>
+            </view>
+        </block>
+        <view class='button-block'>
+            <button form-type='submit' class='button-block_submit' hover-class='button-block_submit_hover'>开始制作</button>
+            <button form-type='reset' plain='true'>重置</button>
+        </view>
+    </form>
 </view>
