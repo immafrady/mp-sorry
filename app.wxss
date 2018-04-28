@@ -31,8 +31,8 @@ page {
 }
 .common-img{
     padding: 10rpx 50rpx;
-    height: 150px;
-    width: 80%
+    width: 80%;
+    height:300rpx
 }
 .common-hr{
     height: 1rpx;
@@ -60,4 +60,16 @@ page {
 }
 .common-input_input:hover {
     border: 1px solid #0099BC;
+}
+.common-button_solid {
+    background-color: #0099BC;
+    color: #fff;
+    transition: all 200ms;
+}
+.common-button_solid_hover {
+    background-color: #00CAF4
+}
+.common-warning {
+    color: #fc7e7e;
+    font-size: 30rpx
 }

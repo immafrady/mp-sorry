@@ -9,6 +9,7 @@
 主页：  
 - [x] 选择模板
 - [ ] 根据模板发送生成Gif的请求  
+- [ ] 由于小程序有安装包大小的限制，所以打算把动态图demo存放在服务器里，等加载好再替换掉静态demo图（根据这篇文章《[在微信小程序里实现图片预加载组件](link3)》的原理，自己动手试着实现一下）
 
 展示页： 
 - [ ] 展示生成的Gif图
@@ -29,3 +30,4 @@
 
 [link1]:https://sorry.xuty.tk/sorry/
 [link2]:https://github.com/q809198545/node-sorry
+[link3]:https://aotu.io/notes/2017/01/06/wxapp-img-loader/index.html

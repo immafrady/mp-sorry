@@ -17,31 +17,38 @@ Page({
         rangeTplType: [{
             name: "Sorry 为所欲为",
             value: "sorry",
-            src: demo.sorry
+            src: demo.sorry,
+            staticSrc: "../../res/demos/sorry.png"
         }, {
             name: "王境泽",
             value: "wangjingze",
-            src: demo.wangjingze
+            src: demo.wangjingze,
+            staticSrc: "../../res/demos/wangjingze.png"
         }, {
             name: "金坷垃",
             value: "jinkela",
-            src: demo.jinkela
+            src: demo.jinkela,
+            staticSrc: "../../res/demos/jinkela.png"
         }, {
             name: "土拨鼠",
             value: "marmot",
-            src: demo.marmot
+            src: demo.marmot,
+            staticSrc: "../../res/demos/marmot.png"
         }, {
             name: "切格瓦拉",
             value: "dagong",
-            src: demo.dagong
+            src: demo.dagong,
+            staticSrc: "../../res/demos/dagong.png"
         }, {
             name: "切格瓦拉偷电动车",
             value: "diandongche",
-            src: demo.diandongche
+            src: demo.diandongche,
+            staticSrc: "../../res/demos/diandongche.png"
         }, {
             name: "诸葛孔明",
             value: "kongming",
-            src: demo.kongming
+            src: demo.kongming,
+            staticSrc: "../../res/demos/kongming.png"
         }]
     },
     //事件处理函数
@@ -85,16 +92,24 @@ Page({
     },
     submitTpl(e) {
         const tpl = this.data.gifTpl
-        console.log(e)
+        // console.log(e)
         wx.request({
             url: api[tpl],
             method: "POST",
             data: e.detail.value,
             success(res) {
-                console.log(res)
+                const msg = res.data
+                console.log(msg)
+                wx.navigateTo({
+                    url: `/pages/output/output?msg=${msg}`,
+                })
             },
-            fail (err) {
+            fail(err) {
                 console.log(err)
+                wx.showToast({
+                    title: err.errMsg,
+                    icon: "none"
+                })
             }
         })
     },

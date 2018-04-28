@@ -25,5 +25,6 @@
             "iconPath": "./res/icons/log.png",
             "selectedIconPath": "./res/icons/log_selected.png"
         }]
-    }
+    },
+    "workers":"workers"
 }

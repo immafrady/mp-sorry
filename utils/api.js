@@ -1,7 +1,6 @@
 const root = "https://api.misakacloud.xyz/gif"
-const demoRoot = "https://misakacloud.xyz/gif/demo"
-// const root = "http://119.29.201.246:4567/make"
-const res = "http://misakacloud.xyz:4567/"
+const demoRoot = "https://misakacloud.xyz/sorry-gif/demo"
+const res = "https://misakacloud.xyz/sorry-gif"
 
 module.exports.req = {
     sorry:`${root}/sorry`,
