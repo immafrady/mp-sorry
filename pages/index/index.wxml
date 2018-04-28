@@ -15,6 +15,7 @@
                 <input class='common-input_input' placeholder='{{item.default}}' name="{{item.id}}"></input>
             </view>
         </block>
+        <view class='warning'>假如全部留空，则输出原始图片</view>
         <view class='button-block'>
             <button form-type='submit' class='button-block_submit' hover-class='button-block_submit_hover'>开始制作</button>
             <button form-type='reset' plain='true'>重置</button>

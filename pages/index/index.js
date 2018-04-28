@@ -2,7 +2,8 @@
 //获取应用实例
 const app = getApp()
 const baseTpl = require("../../utils/baseTpl.js")
-const api = require("../../utils/api.js")
+const api = require("../../utils/api.js").req
+const demo = require("../../utils/api.js").demo
 
 Page({
     data: {
@@ -16,31 +17,31 @@ Page({
         rangeTplType: [{
             name: "Sorry 为所欲为",
             value: "sorry",
-            src: "../../res/demos/sorry.gif"
+            src: demo.sorry
         }, {
             name: "王境泽",
             value: "wangjingze",
-            src: "../../res/demos/wangjingze.gif"
+            src: demo.wangjingze
         }, {
             name: "金坷垃",
             value: "jinkela",
-            src: "../../res/demos/jinkela.gif"
+            src: demo.jinkela
         }, {
             name: "土拨鼠",
             value: "marmot",
-            src: "../../res/demos/marmot.gif"
+            src: demo.marmot
         }, {
             name: "切格瓦拉",
             value: "dagong",
-            src: "../../res/demos/dagong.gif"
+            src: demo.dagong
         }, {
             name: "切格瓦拉偷电动车",
             value: "diandongche",
-            src: "../../res/demos/diandongche.gif"
+            src: demo.diandongche
         }, {
-            name: "厚颜无耻！",
+            name: "诸葛孔明",
             value: "kongming",
-            src: "../../res/demos/kongming.gif"
+            src: demo.kongming
         }]
     },
     //事件处理函数

@@ -47,6 +47,115 @@ module.exports = {
         id: "11",
         title: "另一侧",
         default: "工程师"
+    }],
+    kongming: [{
+        id: "0",
+        title: "第一句",
+        default: "没想到"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "你竟说出如此粗鄙之语"
+    }],
+    diandongche: [{
+        id: "0",
+        title: "第一句",
+        default: "戴帽子的首先进里边去"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "开始拿剪刀出来 拿那个手机"
+    }, {
+        id: "2",
+        title: "第三句",
+        default: "手机上有电筒 用手机照射"
+    }, {
+        id: "3",
+        title: "第四句",
+        default: "寻找那个比较新的电动车"
+    }, {
+        id: "4",
+        title: "第五句",
+        default: "六月六号 两名男子再次出现"
+    }, {
+        id: "5",
+        title: "第六句",
+        default: "民警立刻将两人抓获"
+    }],
+    dagong: [{
+        id: "0",
+        title: "第一句",
+        default: "没有钱啊 肯定要做的啊"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "不做的话没有钱用"
+    }, {
+        id: "2",
+        title: "第三句",
+        default: "那你不会去打工啊"
+    }, {
+        id: "3",
+        title: "第四句",
+        default: "有手有脚的"
+    }, {
+        id: "4",
+        title: "第五句",
+        default: "打工是不可能打工的"
+    }, {
+        id: "5",
+        title: "第六句",
+        default: "这辈子不可能打工的"
+    }],
+    marmot: [{
+        id: "0",
+        title: "第一句",
+        default: "金坷垃好处都有啥"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "谁说对了就给他"
+    }],
+    jinkela: [{
+        id: "0",
+        title: "第一句",
+        default: "金坷垃好处都有啥"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "谁说对了就给他"
+    }, {
+        id: "2",
+        title: "第三句",
+        default: "肥料掺了金坷垃"
+    }, {
+        id: "3",
+        title: "第四句",
+        default: "不流失 不蒸发 零浪费"
+    }, {
+        id: "4",
+        title: "第五句",
+        default: "肥料掺了金坷垃"
+    }, {
+        id: "5",
+        title: "第六句",
+        default: "能吸收两米下的氮磷钾"
+    }],
+    wangjingze: [{
+        id: "0",
+        title: "第一句",
+        default: "我就是饿死"
+    }, {
+        id: "1",
+        title: "第二句",
+        default: "死外边 从这跳下去"
+    }, {
+        id: "2",
+        title: "第三句",
+        default: "也不会吃你们一点东西"
+    }, {
+        id: "3",
+        title: "第四句",
+        default: "真香"
     }]
-
 }

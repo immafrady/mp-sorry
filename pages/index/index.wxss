@@ -15,3 +15,7 @@
 .button-block_submit_hover {
     background-color: #00CAF4
 }
+.warning {
+    color: #fc7e7e;
+    font-size: 30rpx
+}
