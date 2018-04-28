@@ -12,11 +12,11 @@ Page({
         // canIUse: wx.canIUse('button.open-type.getUserInfo'),
         index: 0,
         gifTpl: "sorry",
-        baseTpl:baseTpl["sorry"],
+        baseTpl: baseTpl["sorry"],
         rangeTplType: [{
             name: "Sorry 为所欲为",
             value: "sorry",
-            src:"../../res/demos/sorry.gif"
+            src: "../../res/demos/sorry.gif"
         }, {
             name: "王境泽",
             value: "wangjingze",
@@ -37,6 +37,10 @@ Page({
             name: "切格瓦拉偷电动车",
             value: "diandongche",
             src: "../../res/demos/diandongche.gif"
+        }, {
+            name: "厚颜无耻！",
+            value: "kongming",
+            src: "../../res/demos/kongming.gif"
         }]
     },
     //事件处理函数
@@ -78,18 +82,22 @@ Page({
             baseTpl: baseTpl[val]
         })
     },
-    submitTpl (e) {
+    submitTpl(e) {
         const tpl = this.data.gifTpl
-        console.log(api[tpl])
+        console.log(e)
         wx.request({
             url: api[tpl],
             method: "POST",
-            success (res) {
+            data: e.detail.value,
+            success(res) {
                 console.log(res)
+            },
+            fail (err) {
+                console.log(err)
             }
         })
     },
-    resetTpl (e) {
+    resetTpl(e) {
         console.log(e)
     }
 })

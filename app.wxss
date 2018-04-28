@@ -25,6 +25,7 @@ page {
 .common-picker_value {
     color: #0099BC;
     border:#0099BC 1px solid ;
+    background-color: #fafafa;
     padding: 0 20rpx;
     border-radius: 10rpx;
 }

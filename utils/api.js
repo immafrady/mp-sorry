@@ -1,8 +1,15 @@
+const root = "https://api.misakacloud.xyz/gif"
+// const root = "http://119.29.201.246:4567/make"
+const cache = "http://misakacloud.xyz:4567/"
+
 module.exports = {
-    sorry:"https://sorry.xuty.tk/api/sorry/make",
-    wangjingze:"https://sorry.xuty.tk/api/wangjingze/make",
-    jinkela: "https://sorry.xuty.tk/api/jinkela/make",
-    marmot:"https://sorry.xuty.tk/api/marmot/make",
-    dagong:"https://sorry.xuty.tk/api/dagong/make",
-    diandongche:"https://sorry.xuty.tk/api/diandongche/make"
+    sorry:`${root}/sorry`,
+    wangjingze: `${root}/wangjingze`,
+    jinkela: `${root}/jinkela`,
+    marmot: `${root}/marmot`,
+    dagong: `${root}/dagong`,
+    diandongche: `${root}/diandongche`,
+    kongming: `${root}/kongming`
 }
+
+module.exports.cache = cache
