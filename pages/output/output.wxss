@@ -5,6 +5,24 @@
     justify-content: space-around;
     align-items: center
 }
+.img-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff
+}
+.loading {
+    height: 81px;
+    width: 81px;
+    animation: anime 1500ms linear infinite;
+}
+@keyframes anime {
+    0% {transform: rotateZ(0deg)}
+    25% {transform: rotateZ(90deg)}
+    50% {transform: rotateZ(180deg)}
+    75% {transform: rotateZ(270deg)}
+    100% {transform: rotateZ(360deg)}
+}
 .btn-grp {
     display: flex;
     flex-direction: column;

@@ -15,10 +15,21 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            src: `${baseSrc}${options.msg}`
+        const that = this
+        const webSrc = `${baseSrc}${options.msg}`
+        wx.getImageInfo({
+            src: webSrc,
+            success (res) {
+                that.setData({
+                    src:res.path
+                })
+                console.log(that.data.src)
+            }
         })
-        console.log(this.data.src)
+        // this.setData({
+        //     src: `${baseSrc}${options.msg}`
+        // })
+        
     },
 
     /**
@@ -74,44 +85,106 @@ Page({
      * 保存图片
      */
     saveToDevice() {
-        const auth = app.authorize.writePhotosAlbum
-        if (!auth) {
-            wx.getSetting({
-                success(res) {
-                    const wpa = res.authSetting["scope.writePhotosAlbum"]
-                    // if (!wpa) {
-                    wx.authorize({
-                        scope: 'scope.writePhotosAlbum',
-                        success(res) {
-                            console.log(res)
-                            app.authorize.writePhotosAlbum = true
-                            wx.saveImageToPhotosAlbum({
-                                filePath: '/',
+        const src = this.data.src
+        wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success(res) {
+                wx.saveImageToPhotosAlbum({
+                    filePath: src,
+                    success(res) {
+                        wx.showToast({
+                            title: '保存成功！',
+                        })
+                    },
+                    fail(res) {
+                        wx.showToast({
+                            title: '保存失败，请重新再试',
+                            icon: 'none'
+                        })
+                    }
+                })
+                // wx.getImageInfo({
+                //     src: src,
+                //     success(res) {
+                //         const path = res.path
+                //         console.dir(path)
+                        
+                //     },
+                //     fail(res) {
+                //         wx.showToast({
+                //             title: '获取图片信息失败，请重新再试',
+                //             icon: 'none'
+                //         })
+                //     }
+                // })
+            },
+            fail(res) {
+                wx.showModal({
+                    title: '授权失败',
+                    content: '请赐予我保存照片的力量~！',
+                    confirmColor: "#0099BC",
+                    confirmText: "立即授权",
+                    cancelColor: "#e0e0e0",
+                    cancelText: "狠心拒绝",
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.openSetting({
                                 success(res) {
-                                    console.log(`保存`)
-                                    console.log(res)
-                                },
-                                fail (res) {
-                                    console.log(`失败`)
-                                    console.log(res)
+                                    wx.showToast({
+                                        title: '请给我“保存到相册”的权限后，再试一次保存吧！',
+                                        icon: "none"
+                                    })
                                 }
                             })
-                        },
-                        fail(res) {
-                            console.log(res)
+                            console.log('用户点击确定')
+                        } else if (res.cancel) {
+                            wx.showToast({
+                                title: '需要“保存到相册”权限才能完成操作',
+                                icon: "none"
+                            })
                         }
-                    })
-                }
-            })
-        } else {
-            wx.saveImageToPhotosAlbum({
-                filePath: '/',
-                success(res) {
-                    console.log(`保存`)
-                    console.log(res)
-                }
-            })
-        }
+                    }
+                })
+            }
+        })
+        // const auth = app.authorize.writePhotosAlbum
+        // if (!auth) {
+        //     wx.getSetting({
+        //         success(res) {
+        //             const wpa = res.authSetting["scope.writePhotosAlbum"]
+        //             // if (!wpa) {
+        //             wx.authorize({
+        //                 scope: 'scope.writePhotosAlbum',
+        //                 success(res) {
+        //                     console.log(res)
+        //                     app.authorize.writePhotosAlbum = true
+        //                     wx.saveImageToPhotosAlbum({
+        //                         filePath: '/',
+        //                         success(res) {
+        //                             console.log(`保存`)
+        //                             console.log(res)
+        //                         },
+        //                         fail (res) {
+        //                             console.log(`失败`)
+        //                             console.log(res)
+        //                         }
+        //                     })
+        //                 },
+        //                 fail(res) {
+        //                     console.log(res)
+        //                 }
+        //             })
+        //         }
+        //     })
+        // } else {
+        //     wx.saveImageToPhotosAlbum({
+        //         filePath: '/',
+        //         success(res) {
+        //             console.log(`保存`)
+        //             console.log(res)
+        //         }
+        //     })
+        // }
     },
     /**
      * 展开全图

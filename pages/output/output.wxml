@@ -1,7 +1,13 @@
 <!--pages/output/output.wxml-->
 <view class='container output-base'>
-    <text class='title'>~~~~~ Tada! ~~~~~</text>
-    <image class="common-img img-box" src="{{src}}" mode="widthFit" bindtap='displayFullScreen'/>
+    <text class='title'>{{src !== ""?"~~~~~ Tada! ~~~~~":"动图制作中，请稍等"}}</text>
+
+    <view wx:if="{{src === ''}}" class='common-img img-box'>
+        <image class="loading" src='../../res/icons/loading.png'></image>
+    </view>
+    <image wx:else class="common-img img-box" src="{{src}}" mode="widthFit" bindtap='displayFullScreen'/>
+
+
     <view class='btn-grp'>
         <button class='btn-save common-button_solid' hover-class='common-button_solid_hover' bindtap='saveToDevice'>保存至本地</button>
         <view class='common-warning'>点开图片后，长按图片即可收藏或是分享给好友</view>
