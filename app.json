@@ -8,7 +8,7 @@
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#0099BC",
         "navigationBarTitleText": "制作Sorry Gif图",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "white"
     },
     "tabBar" : {
         "backgroundColor":"#fff",

@@ -28,6 +28,10 @@
 - [x] 用自己的服务器接受请求
 - [ ] 重定向静态图片
 
+### 总体优化
+---
+- [ ] 利用本地储存，降低网络请求数量
+
 
 [link1]:https://sorry.xuty.tk/sorry/
 [link2]:https://github.com/q809198545/node-sorry
