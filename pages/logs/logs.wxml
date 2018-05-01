@@ -1,9 +1,19 @@
 <!--logs.wxml-->
-<view class='base'>
-<view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
-    <text class="log-item">{{index + 1}}. {{log}}</text>
-  </block>
-</view>
-
+<view class='logs-bg'>
+    <!-- <block> -->
+        <view class='log-item' bindtap=''>
+            <image src='../../res/demos/sorry.png' class='log-img' mode="widthFix"></image>
+            <view class='msg-box'>
+                <text class='msg-text'>Sorry 为所欲为</text>
+                <text class='msg-time'>20180429</text>
+            </view>
+        </view>
+        <view class='log-item' bindtap=''>
+            <image src='../../res/demos/sorry.png' class='log-img' mode="widthFix"></image>
+            <view class='msg-box'>
+                <text class='msg-text'>Sorry 为所欲为</text>
+                <text class='msg-time'>20180429</text>
+            </view>
+        </view>
+    <!-- </block> -->
 </view>

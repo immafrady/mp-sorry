@@ -1,8 +1,41 @@
-.log-list {
-  display: flex;
-  flex-direction: column;
-  padding: 40rpx;
+.log-bg{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column
 }
 .log-item {
-  margin: 10rpx;
+    box-sizing: border-box;
+    margin: 30rpx auto;
+    width: 80%;
+    height: 400rpx;
+    overflow: hidden;
+    border-radius: 10rpx;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0rpx 10rpx 20rpx #e3e3e3;
+    transition: all 300ms;
+}
+.log-item:hover {
+    box-shadow: 0 0 10rpx #d0d0d0;
+}
+.log-img {
+    width: 100%;
+    height: 350rpx;
+}
+.msg-box {
+    background-color: #fff;
+    margin:0 10rpx 20rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline
+}
+.msg-text{
+    color: #0099BC
+}
+.msg-time {
+    color: #ccc;
+    font-size: 20rpx;
 }

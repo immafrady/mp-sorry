@@ -22,28 +22,26 @@ Page({
             success (res) {
                 // 储存一下获取到的图片本地路径
                 const tempPath = res.path
-                // 判断储存的文件总大小
                 wx.getSavedFileList({
                     success (res) {
-                        let totalFileSize = 0;
-                        totalFileSize = res.fileList.reduce((prev, curr)=>prev + curr.size,totalFileSize)
-                        console.log(totalFileSize)
-                        if (totalFileSize > 8000000){
-                            wx.removeSavedFile({
-                                filePath: res.fileList[0].filePath,
-                            })
-                        }
+                        // 判断目前储存的文件总大小
+                        // let totalFileSize = 0;
+                        // totalFileSize = res.fileList.reduce((prev, curr)=>prev + curr.size,totalFileSize)
+                        // console.log(totalFileSize)
+                        // if (totalFileSize > 8000000){
+                        //     wx.removeSavedFile({
+                        //         filePath: res.fileList[0].filePath,
+                        //     })
+                        // }
+                        wx.removeSavedFile({
+                            filePath: res.fileList[0].filePath,
+                        })
                         wx.saveFile({
                             tempFilePath: tempPath,
                             success(res) {
                                 console.log(res.savedFilePath)
                                 that.setData({
                                     src: res.savedFilePath
-                                })
-                                wx.getSavedFileList({
-                                    success(res) {
-                                        console.log(res)
-                                    }
                                 })
                             },
                             fail(res) {
@@ -54,11 +52,7 @@ Page({
                 })
             
             }
-        })
-        // this.setData({
-        //     src: `${baseSrc}${options.msg}`
-        // })
-        
+        })   
     },
 
     /**
